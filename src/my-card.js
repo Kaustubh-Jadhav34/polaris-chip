@@ -1,4 +1,4 @@
-// my-card.js
+// src/my-card.js
 import { LitElement, html, css } from 'lit';
 
 export class MyCard extends LitElement {
@@ -15,21 +15,18 @@ export class MyCard extends LitElement {
 
   static get properties() {
     return {
-      title: { type: String },
-      image: { type: String },
+      title:   { type: String },
+      image:   { type: String },
       details: { type: String },
-      href: { type: String },
-      active: { type: Boolean, reflect: true },
+      href:    { type: String },
+      active:  { type: Boolean, reflect: true }, // reflect so CSS can read state
     };
   }
 
   static get styles() {
     return css`
       :host { display: inline-flex; margin: 8px; }
-      :host([active]) .card {
-        outline: 2px solid #22c55e;
-        outline-offset: 8px;
-      }
+      :host([active]) .card { outline: 2px solid #22c55e; outline-offset: 8px; }
       .card {
         display: inline-flex;
         border: 2px solid grey;

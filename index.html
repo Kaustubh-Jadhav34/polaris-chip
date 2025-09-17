@@ -1,42 +1,72 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Web Components Activity</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Import map so we can `import { ... } from 'lit'` in JS files without a bundler -->
+    <script type="importmap">
+      {
+        "imports": {
+          "lit": "https://cdn.jsdelivr.net/npm/lit@3/+esm"
+        }
+      }
+    </script>
+    <style>
+      body { font-family: system-ui, Arial, sans-serif; padding: 16px; }
+      .row { display: flex; flex-wrap: wrap; gap: 16px; }
+      h2 { margin-top: 24px; }
+    </style>
+    <!-- Load custom elements -->
+    <script type="module" src="./polaris-chip.js"></script>
+    <script type="module" src="./my-card.js"></script>
+  </head>
+  <body>
+    <h1>Week 4 — Components Demo</h1>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="Description" content="Boilerplate for polaris chip">
-  <base href="/">
+    <h2>Polaris Chip</h2>
+    <div class="row">
+      <polaris-chip title="Plain"></polaris-chip>
+      <polaris-chip title="Linked" href="https://example.com" active></polaris-chip>
+      <polaris-chip title="Docs" href="https://example.com/docs"></polaris-chip>
+    </div>
 
-  <style>
-    :root,
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: sans-serif;
-      background-color: #ededed;
-    }
-    polaris-chip {
-      margin: 16px;
-    }
-  </style>
-  <title>polaris-chip / my-card</title>
-</head>
+    <h2>My Card (5 examples)</h2>
+    <div class="row">
+      <my-card
+        title="Charmander"
+        image="https://picsum.photos/seed/char/400/250"
+        details="Fire type starter"
+        href="https://example.com/char"
+      ></my-card>
 
-<body>
-  <h1>polaris-chip</h1>
-  <!-- this is going to do whatever the tag's defaults are -->
-  <polaris-chip title="News of Record" link="https://psu.edu/"></polaris-chip>
-  <polaris-chip title="Faculty and Staff"></polaris-chip>
-  <polaris-chip title="Sports are the only thing that matter"></polaris-chip>
-  <polaris-chip title="Grants and donations"></polaris-chip>
+      <my-card
+        title="Squirtle"
+        image="https://picsum.photos/seed/squ/400/250"
+        details="Water type starter"
+      ></my-card>
 
-  <h1>my-card</h1>
-  <my-card></my-card>
+      <my-card
+        title="Bulbasaur"
+        image="https://picsum.photos/seed/bul/400/250"
+        details="Grass/Poison starter"
+        active
+      ></my-card>
 
-  <!-- this is what is bringing in the definition for this tag -->
-  <script type="module" src="./src/polaris-chip.js"></script>
-  <script type="module" src="./src/my-card.js"></script>
-</body>
+      <my-card
+        title="Pikachu"
+        image="https://picsum.photos/seed/pika/400/250"
+        details="Electric mouse"
+      >
+        Slot content: <a href="https://example.com/pika" target="_blank" rel="noopener">extra info</a>
+      </my-card>
 
+      <my-card
+        title="Eevee"
+        image="https://picsum.photos/seed/eev/400/250"
+        details="Adaptable normal type"
+        href="https://example.com/eev"
+      ></my-card>
+    </div>
+  </body>
 </html>

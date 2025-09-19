@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <title>Web Components Activity</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- Import map so we can `import { ... } from 'lit'` in JS files without a bundler -->
     <script type="importmap">
       {
         "imports": {
@@ -13,13 +12,13 @@
       }
     </script>
     <style>
-      body { font-family: system-ui, Arial, sans-serif; padding: 16px; }
+      body { font-family: system-ui, Arial, sans-serif; padding: 16px; background:#ededed; }
       .row { display: flex; flex-wrap: wrap; gap: 16px; }
       h2 { margin-top: 24px; }
+      polaris-chip { margin: 16px; }
     </style>
-    <!-- Load custom elements -->
-    <script type="module" src="./polaris-chip.js"></script>
-    <script type="module" src="./my-card.js"></script>
+    <script type="module" src="./src/polaris-chip.js"></script>
+    <script type="module" src="./src/my-card.js"></script>
   </head>
   <body>
     <h1>Week 4 — Components Demo</h1>

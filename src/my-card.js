@@ -19,7 +19,7 @@ export class MyCard extends LitElement {
       image:   { type: String },
       details: { type: String },
       href:    { type: String },
-      active:  { type: Boolean, reflect: true }, // reflect so CSS can read state
+      active:  { type: Boolean, reflect: true },
     };
   }
 

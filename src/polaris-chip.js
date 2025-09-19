@@ -1,4 +1,4 @@
-// polaris-chip.js
+// src/polaris-chip.js
 import { LitElement, html, css } from 'lit';
 
 export class PolarisChip extends LitElement {
@@ -7,18 +7,18 @@ export class PolarisChip extends LitElement {
   constructor() {
     super();
     this.title = 'Chip Default';
-    this.href = '';            // when set, chip renders as <a>
-    this.target = '_blank';    // default for external links
-    this.rel = 'noopener';     // security best-practice with target=_blank
-    this.active = false;       // visual attention state
+    this.href = '';
+    this.target = '_blank';
+    this.rel = 'noopener';
+    this.active = false;
   }
 
   static get properties() {
     return {
-      title: { type: String },
-      href: { type: String },
+      title:  { type: String },
+      href:   { type: String },
       target: { type: String },
-      rel: { type: String },
+      rel:    { type: String },
       active: { type: Boolean, reflect: true },
     };
   }
@@ -27,24 +27,14 @@ export class PolarisChip extends LitElement {
     return css`
       :host { display: inline-flex; }
       :host([active]) span, :host([active]) a {
-        outline: 2px solid #22c55e;
-        outline-offset: 4px;
+        outline: 2px solid #22c55e; outline-offset: 4px;
       }
       span, a {
-        background-color: orange;
-        color: black;
-        font-size: 24px;
-        padding: 16px;
-        margin: 8px;
-        text-decoration: none;
-        border-radius: 8px;
-        display: inline-block;
+        background-color: orange; color: black; font-size: 24px;
+        padding: 16px; margin: 8px; text-decoration: none; border-radius: 8px; display: inline-block;
       }
       span:hover, a:hover,
-      span:focus-visible, a:focus-visible {
-        background-color: grey;
-        border: 1px solid black;
-      }
+      span:focus-visible, a:focus-visible { background-color: grey; border: 1px solid black; }
     `;
   }
 

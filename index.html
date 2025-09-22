@@ -12,7 +12,7 @@
       }
     </script>
     <style>
-      body { font-family: system-ui, Arial, sans-serif; padding: 16px; background:#ededed; }
+      body { font-family: system-ui, Arial, sans-serif; padding: 16px; background:#ededed; margin: 0; }
       .row { display: flex; flex-wrap: wrap; gap: 16px; }
       h2 { margin-top: 24px; }
       polaris-chip { margin: 16px; }
@@ -26,45 +26,48 @@
     <h2>Polaris Chip</h2>
     <div class="row">
       <polaris-chip title="Plain"></polaris-chip>
-      <polaris-chip title="Linked" href="https://example.com" active></polaris-chip>
-      <polaris-chip title="Docs" href="https://example.com/docs"></polaris-chip>
+      <polaris-chip title="Linked" href="https://www.pokemon.com/us" active></polaris-chip>
+      <polaris-chip title="News" href="https://www.pokemon.com/us/pokemon-news"></polaris-chip>
     </div>
 
     <h2>My Card (5 examples)</h2>
     <div class="row">
       <my-card
         title="Charmander"
-        image="https://picsum.photos/seed/char/400/250"
-        details="Fire type starter"
-        href="https://example.com/char"
+        image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/004.png"        
+        details="Fire type"
+        href="https://www.pokemon.com/us/pokedex/charmander"
       ></my-card>
 
       <my-card
         title="Squirtle"
-        image="https://picsum.photos/seed/squ/400/250"
-        details="Water type starter"
+        image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/007.png"
+        details="Water Type"
+        href="https://www.pokemon.com/us/pokedex/squirtle"
       ></my-card>
 
       <my-card
         title="Bulbasaur"
-        image="https://picsum.photos/seed/bul/400/250"
-        details="Grass/Poison starter"
+        image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/001.png"
+        details="Grass Type"
+        href="https://www.pokemon.com/us/pokedex/bulbasaur"
         active
       ></my-card>
 
       <my-card
         title="Pikachu"
-        image="https://picsum.photos/seed/pika/400/250"
-        details="Electric mouse"
+        image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/025.png"
+        details="Electric Type"
+        href="https://www.pokemon.com/us/pokedex/pikachu"
       >
-        Slot content: <a href="https://example.com/pika" target="_blank" rel="noopener">extra info</a>
+       
       </my-card>
 
       <my-card
         title="Eevee"
-        image="https://picsum.photos/seed/eev/400/250"
-        details="Adaptable normal type"
-        href="https://example.com/eev"
+        image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/133.png"
+        details="Normal type"
+        href="https://www.pokemon.com/us/pokedex/eevee"
       ></my-card>
     </div>
   </body>

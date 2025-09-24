@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Web Components Activity</title>
+    <title>My Card Demo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script type="importmap">
       {
@@ -11,64 +11,116 @@
         }
       }
     </script>
-    <style>
-      body { font-family: system-ui, Arial, sans-serif; padding: 16px; background:#ededed; margin: 0; }
-      .row { display: flex; flex-wrap: wrap; gap: 16px; }
-      h2 { margin-top: 24px; }
-      polaris-chip { margin: 16px; }
-    </style>
-    <script type="module" src="./src/polaris-chip.js"></script>
     <script type="module" src="./src/my-card.js"></script>
+    <style>
+      body {
+        font-family: system-ui, Arial, sans-serif;
+        padding: 16px;
+        background: #f9f9ff;
+      }
+      .demo-controls {
+        display: flex;
+        gap: 14px;
+        margin-bottom: 24px;
+      }
+      .demo-controls button {
+        padding: 10px 22px;
+        font-size: 1rem;
+        border-radius: 7px;
+        border: none;
+        background: #1746ed;
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .demo-controls button:hover {
+        background: #000974;
+      }
+      .cards-demo {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 32px;
+      }
+      my-card[fancy] {
+        --my-card-fancy-bg: #FFDE34;
+      }
+    </style>
   </head>
   <body>
-    <h1>Week 4 — Components Demo</h1>
+    <h1>Top 5 Places To Eat In State College</h1>
 
-    <h2>Polaris Chip</h2>
-    <div class="row">
-      <polaris-chip title="Plain"></polaris-chip>
-      <polaris-chip title="Linked" href="https://www.pokemon.com/us" active></polaris-chip>
-      <polaris-chip title="News" href="https://www.pokemon.com/us/pokemon-news"></polaris-chip>
-    </div>
+    
+  <div class="controls">
+    <button type="button" onclick="window.open('https://www.google.com/search?q=best+places+to+eat+state+college&client=opera-gx&hs=mKW&sca_esv=6df9598451498e66&sxsrf=AE3TifPU2g6x58J7OK22nzCPalhZDZBESw%3A1758727944123&ei=CA_UaL2MB83Y5NoP1MiHyQ4&ved=0ahUKEwi9sPaS3PGPAxVNLFkFHVTkIekQ4dUDCBA&oq=best+places+to+eat+state+college&gs_lp=Egxnd3Mtd2l6LXNlcnAiIGJlc3QgcGxhY2VzIHRvIGVhdCBzdGF0ZSBjb2xsZWdlSABQAFgAcAB4AZABAJgBAKABAKoBALgBDMgBAJgCAKACAJgDAJIHAKAHALIHALgHAMIHAMgHAA&sclient=gws-wiz-serp', '_blank')">Find Out More!</button>
+    <button type="button" onclick="window.open('https://www.tripadvisor.com/Restaurants-g53755-State_College_Pennsylvania.html', '_blank')">Trip Advisor</button>
+    <button type="button" onclick="window.open('https://www.yelp.com/search?find_desc=Restaurants&find_loc=State+College%2C+PA&dd_referrer=https%3A%2F%2Fwww.google.com%2F', '_blank')">Yelp</button>
+    <button type="button" onclick="window.open('https://github.com/Kaustubh-Jadhav34', '_blank')">About Me</button>
+    <button type="button" onclick="window.open('https://hax.psu.edu', '_blank')">HAX @ PSU</button>
+  </div>
 
-    <h2>My Card (5 examples)</h2>
-    <div class="row">
+
+    <div class="cards">
       <my-card
-        title="Charmander"
-        image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/004.png"        
-        details="Fire type"
-        href="https://www.pokemon.com/us/pokedex/charmander"
-      ></my-card>
-
-      <my-card
-        title="Squirtle"
-        image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/007.png"
-        details="Water Type"
-        href="https://www.pokemon.com/us/pokedex/squirtle"
-      ></my-card>
-
-      <my-card
-        title="Bulbasaur"
-        image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/001.png"
-        details="Grass Type"
-        href="https://www.pokemon.com/us/pokedex/bulbasaur"
-        active
-      ></my-card>
-
-      <my-card
-        title="Pikachu"
-        image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/025.png"
-        details="Electric Type"
-        href="https://www.pokemon.com/us/pokedex/pikachu"
+        image="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/73/8c/41/ottos.jpg?w=1100&h=600&s=1"
+        title="Otto's Pub and Brewery"
+        fancy
       >
-       
+        <p>
+          Otto's Pub and Brewery, located in State College, Pennsylvania, is a major draw for beer enthusiasts looking for a variety of craft beers on tap. These beers range from light and refreshing to rich and full-bodied, with something to suit every taste. In addition to our impressive beer selection, our menu features beef from our own A.V. Farms and other locally sourced ingredients. 
+        </p>
+        <a href="https://www.tripadvisor.com/Restaurant_Review-g53755-d787197-Reviews-Otto_s_Pub_and_Brewery-State_College_Pennsylvania.html" target="_blank">More Info</a>
       </my-card>
-
       <my-card
-        title="Eevee"
-        image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/133.png"
-        details="Normal type"
-        href="https://www.pokemon.com/us/pokedex/eevee"
-      ></my-card>
+        image="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/cc/dc/24/img-20190604-182835-largejpg.jpg?w=1000&h=600&s=1"
+        title="The Tavern Restaurant"
+      >
+        <p>
+          The Tavern Restaurant has proudly served downtown State College, Pennsylvania since 1948.A newly renovated historic institution, The Tavern specializes in contemporary classic American cuisine in the ambiance of a colonial tavern. Join us for elevated comfort food, timeless cocktails and first class service.
+        </p>
+        <button onclick="window.open('https://www.tripadvisor.com/Restaurant_Review-g53755-d1075840-Reviews-The_Tavern_Restaurant-State_College_Pennsylvania.html', '_blank')">
+          More Info
+        </button>
+      </my-card>
+      <my-card
+        image="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/ff/99/f4/decor.jpg?w=1800&h=1000&s=1"
+        title="The Field Burger & Tap"
+      >
+        <p>
+          <em>The Field embraces its farm-to-table mentality using the freshest ingredients available including local breads, a variety of regional Amish cheeses, and private blend of sirloin, chuck, brisket, and short rib to create our hand-formed burgers. The Field offers an extensive selection of craft beers from State College and Central Pennsylvania. Our milkshakes are hand-spun using the legendary ice cream from Penn State’s Berkey Creamery.
+        </p>
+        <button onclick="window.open('https://www.tripadvisor.com/Restaurant_Review-g53755-d8651669-Reviews-The_Field_Burger_Tap-State_College_Pennsylvania.html', '_blank')">
+          More Info
+        </button>
+      </my-card>
+      <my-card
+        image="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/44/70/ee/the-original-waffle-shop.jpg?w=1100&h=600&s=1"
+        title="The Original Waffle Shop"
+        fancy
+      >
+        <p>
+          Vegetarian friendly, Vegan options, Gluten free options
+          Accepts Credit Cards
+          Breakfast, Lunch, Brunch
+        </p>
+        <a href="https://www.tripadvisor.com/Restaurant_Review-g53755-d4944920-Reviews-The_Original_Waffle_Shop-State_College_Pennsylvania.html" target="_blank">More Info</a>
+      </my-card>
+      <my-card
+        image="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/a7/a0/eb/happy-valley-brewing.jpg?w=1000&h=-1&s=1"
+        title="Happy Valley Brewing Company"
+      >
+        <p>
+          CUISINES
+          American, Brew Pub, Bar, Pub
+          Meal types
+          Dinner, Late Night, Drinks
+          Special Diets
+          Vegetarian friendly, Vegan options, Gluten free options
+        </p>
+        <button onclick="window.open('https://www.tripadvisor.com/Restaurant_Review-g53755-d5962445-Reviews-Happy_Valley_Brewing_Company-State_College_Pennsylvania.html', '_blank')">
+          More Info
+        </button>
+      </my-card>
     </div>
   </body>
 </html>
